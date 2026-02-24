@@ -1,19 +1,17 @@
 resource "aws_instance" "Roboshop" {
-  for_each = var.instances
-  # for_each = toset(var.instances)
   ami           = "ami-0220d79f3f480ecf5"
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
   tags = {
-    Name = each.key
+    Name = "Terraform-remote-state-demo"
     Project = "roboshop"
   }
 }
 
 
 resource "aws_security_group" "allow_tls" {
-  name        = "allow_all_terraform" #this is for aws account
+  name        = "allow_all_terraform-remote-state" #this is for aws account
   description = "Allow TLS inbound traffic and all outbound traffic"
 
     egress {

@@ -4,7 +4,7 @@ resource "aws_instance" "Roboshop" {
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
   tags = {
-    Name = "Terraform"
+    Name = "Terraform-state-demo"
     Project = "roboshop"
   }
 }

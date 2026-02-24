@@ -12,7 +12,7 @@ variable "ec2_tags" {
         Env = "prod"
     }
 }
-merge will replace env -dev with Env - prod
+# merge will replace env -dev with Env - prod
 variable "sg_tags" {
     default = {
         Name = "functions-demo"
